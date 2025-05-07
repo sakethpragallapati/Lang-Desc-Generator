@@ -1,12 +1,14 @@
 import express from 'express';
 import axios from 'axios';
+import LangModel from '../../models/Languages.js';
 
 const router = express.Router();
 
 router.post("/", async (req, res) => {
     try {
         const { langName } = req.body;
-
+        const available = await LangModel.findOne({langName: langName.toLowerCase()});
+        if(available) return res.json({output:"Language already documented choose another..."});
         const response = await axios.post(
             `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.API_KEY}`,
             {
@@ -24,6 +26,8 @@ router.post("/", async (req, res) => {
         );
 
         const output = response.data.candidates[0].content.parts[0].text;
+        const newLang = new LangModel({langName : langName.toLowerCase(), landDesc:output});
+        const savedLang = await newLang.save();
         res.json({ output });
     } catch (error) {
         console.error("Error communicating with Gemini:", error);
