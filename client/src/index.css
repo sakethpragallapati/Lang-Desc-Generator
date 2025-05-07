@@ -1,0 +1,38 @@
+/* Custom background color for dark blue */
+.bg-dark-blue {
+  background-color: #01274d; /* Darker shade of blue */
+}
+
+/* Optional: If you want to customize other Bootstrap components for the dark theme */
+
+/* Change button background color for a darker theme */
+.btn-primary {
+  background-color: #004080; /* Darker blue for buttons */
+  border-color: #003366; /* Darker border */
+}
+
+.btn-primary:hover {
+  background-color: #003366; /* Even darker blue on hover */
+  border-color: #002244;
+}
+
+/* Optional: Customize alert styles for better visibility */
+.alert-danger {
+  background-color: #f8d7da; /* Lighter red for error alerts */
+  color: #721c24;
+}
+
+/* Customize the input fields with a slight dark blue border */
+.form-control {
+  border-color: #001f3d; /* Darker border */
+  background-color: #f0f8ff; /* Lighter background color for contrast */
+}
+
+/* Customize text and headings for better readability on dark background */
+.text-primary {
+  color: #003366; /* Darker text color */
+}
+
+h2, h5 {
+  color: #ffffff; /* Ensure headings are white for visibility on dark background */
+}
