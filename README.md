@@ -1,4 +1,3 @@
-
 # 🌐 Language Description Generator
 
 A full-stack web app that uses Google's Gemini API to generate detailed descriptions of world languages. Users input a language name, and the app returns a structured, informative write-up stored in MongoDB for future reference.
@@ -27,7 +26,8 @@ project-root/
 │   │   └── api/
 │   │       └── gemini.js
 │   ├── server.js
-│   └── .env
+│   ├── .env.example  # Template for environment variables
+│   └── .gitignore    # Includes `.env`
 │
 └── README.md
 ```
@@ -62,28 +62,36 @@ git clone https://github.com/your-username/lang-desc-generator.git
 cd lang-desc-generator
 ```
 
-### 2. Setup the Server
+---
+
+### 2. Configure Environment Variables
+
+From the `server/` directory:
+
+```bash
+cp .env.example .env
+```
+
+Then open `.env` and replace placeholders with your actual credentials:
+
+```env
+MONGO_URL=your_real_mongodb_connection_string
+API_KEY=your_real_google_gemini_api_key
+```
+
+---
+
+### 3. Install & Start the Server
 
 ```bash
 cd server
 npm install
-touch .env
-```
-
-Inside `.env`:
-
-```
-MONGO_URL=your_mongodb_connection_string
-API_KEY=your_google_gemini_api_key
-```
-
-Then run:
-
-```bash
 node server.js
 ```
 
-### 3. Setup the Client
+---
+
+### 4. Install & Start the Client
 
 ```bash
 cd ../client
@@ -91,15 +99,15 @@ npm install
 npm start
 ```
 
-Make sure the server is running at `http://localhost:5000`.
+Ensure your backend runs on `http://localhost:5000`.
 
 ---
 
-## 🧱 API Endpoint
+## 🔗 API Endpoint
 
 `POST /api/gemini`
 
-**Request Body:**
+**Request:**
 
 ```json
 {
@@ -119,9 +127,9 @@ Make sure the server is running at `http://localhost:5000`.
 
 ## 📌 Future Enhancements
 
-- 📎 **File Uploads** using Multer (e.g., for uploading supporting documents).
-- 🔥 **Firebase Integration** for hosting, authentication, or Firestore.
-- 📊 Admin dashboard for language analytics.
+- 📎 File Uploads (e.g., for uploading supporting documents)
+- 🔥 Firebase Integration (hosting, auth, Firestore)
+- 📊 Admin dashboard for language analytics
 
 ---
 
