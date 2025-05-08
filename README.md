@@ -58,7 +58,7 @@ project-root/
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/lang-desc-generator.git
+git clone https://github.com/sakethpragallapati/Lang-Desc-Generator.git
 cd lang-desc-generator
 ```
 
