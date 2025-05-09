@@ -26,8 +26,8 @@ project-root/
 │   │   └── api/
 │   │       └── gemini.js
 │   ├── server.js
-│   ├── .env.example  # Template for environment variables
-│   └── .gitignore    # Includes `.env`
+│   ├── .env.example  
+│   └── .gitignore    
 │
 └── README.md
 ```
